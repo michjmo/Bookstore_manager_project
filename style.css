@@ -1,0 +1,202 @@
+/* General transitions */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #f8fafc;
+  color: #0f172a;
+
+  /* Toggle-switch colors */
+  --toggle-bg-off: #cbd5e1;
+  --toggle-bg-on:  #dde4ef;
+  --toggle-handle: #ffffff;
+}
+
+body.dark {
+  background-color: #e7e7e7;
+  color: #f8fafc;
+
+  --toggle-bg-off: #475569;
+  --toggle-bg-on:  #2563eb;
+  --toggle-handle: #f8fafc;
+}
+
+/* Cards*/
+.card {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styling */
+.table-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e2e8f0;
+  transition: background-color 0.3s ease;
+}
+
+.table-row:hover {
+  background-color: rgba(100, 116, 139, 0.1);
+}
+
+.table-header {
+  font-weight: 700;
+  border-bottom: 2px solid #94a3b8;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.table-item {
+  flex: 1;
+  word-wrap: break-word;
+}
+
+/* Input Fields */
+.futuristic-input {
+  padding: 0.5rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  color: inherit;
+}
+
+.futuristic-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.02);
+}
+
+/* Add Book Button */
+.add-btn {
+  background: linear-gradient(to right, #3b82f6, #06b6d4);
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: transform 0.2s ease, background 0.3s;
+}
+
+.add-btn:hover {
+  background: linear-gradient(to right, #2563eb, #0ea5e9);
+  transform: scale(1.03);
+}
+
+/* ✨ Delete Button Update */
+.delete-button {
+  background: linear-gradient(to right, #6366f1, #ec4899);
+  color: white;
+  padding: 0.4rem 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.delete-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #4f46e5, #db2777);
+}
+
+/* Gradient Background */
+body.gradient {
+  background: linear-gradient(to top right, #0f172a, #1e3a8a);
+}
+
+/* Toastify Notifications */
+.toastify {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  color: #f8fafc;
+  animation: toastPulse 0.3s ease-out;
+}
+
+.toastify.success {
+  background: linear-gradient(to right, #00c9ff, #92fe9d);
+  border-left: 5px solid #22c55e;
+}
+
+.toastify.error {
+  background: linear-gradient(to right, #ff6a6a, #b30000);
+  border-left: 5px solid #ef4444;
+}
+
+body.dark .toastify.success {
+  background: linear-gradient(to right, #0f766e, #14b8a6);
+  border-left: 5px solid #22c55e;
+  color: #e0f2fe;
+}
+
+body.dark .toastify.error {
+  background: linear-gradient(to right, #7f1d6a, #921666);
+  border-left: 5px solid #ef4483;
+  color: #fee2e2;
+}
+
+@keyframes toastPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Toggle-Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--toggle-bg-off);
+  transition: background-color 0.3s;
+  border-radius: 28px;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  left: 2px;
+  bottom: 2px;
+  background-color: var(--toggle-handle);
+  transition: transform 0.3s;
+  border-radius: 50%;
+}
+
+.switch input:checked + .slider {
+  background-color: var(--toggle-bg-on);
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(24px);
+}

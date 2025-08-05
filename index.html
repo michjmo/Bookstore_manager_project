@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <main class="center-wrapper">
+  
+  <title>Bookstore DOM Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Toastify -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+  />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Futuristic CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="transition duration-300 gradient">
+
+  <main class="p-6 max-w-4xl mx-auto">
+    <section class="flex justify-between items-center mb-6">
+      <h1 class="text-3xl font-bold">Bookstore Manager</h1>
+      <!-- Theme Toggle -->
+      <label class="switch">
+        <input type="checkbox" id="theme-toggle" />
+        <span class="slider"></span>
+      </label>
+    </section>
+
+    <form id="submit-book" class="space-y-4 mb-10">
+      <input
+        id="book-title"
+        class="futuristic-input w-full"
+        placeholder="Book title"
+        required
+      />
+      <input
+        id="book-author"
+        class="futuristic-input w-full"
+        placeholder="Author"
+        required
+      />
+      <input
+        id="book-publisher"
+        class="futuristic-input w-full"
+        placeholder="Publisher"
+        required
+      />
+      <button type="submit" class="add-btn">Add Book</button>
+    </form>
+
+    <h2 class="text-xl font-semibold mb-4">Books in Stock</h2>
+    <section id="books-table">
+      <!-- header row -->
+      <div class="table-row table-header grid grid-cols-4 gap-4 font-semibold">
+        <div class="table-item">Title</div>
+        <div class="table-item">Author</div>
+        <div class="table-item">Publisher</div>
+        <div class="table-item">Action</div>
+      </div>
+      <!-- dynamically injected rows go here -->
+    </section>
+  </main>
+
+  <!-- Toastify JS -->
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+  <!-- App Script -->
+  <script src="app.js"></script>
+</main>
+</body>
+</html>
